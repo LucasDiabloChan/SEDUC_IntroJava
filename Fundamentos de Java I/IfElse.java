@@ -52,6 +52,7 @@
     /   |   
     /   |   Em Java, são representados por:
     /   |   
+    /   |   --> Atribuição: '=';
     /   |   --> Soma: '+';
     /   |   --> Subtração: '-';
     /   |   --> Divisão: '/';
