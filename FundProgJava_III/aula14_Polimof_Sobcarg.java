@@ -24,7 +24,6 @@ public class aula14_Polimof_Sobcarg{
         f.assinatura("Victor");
         
         fia.assinatura();
-        fia.assinatura("Victor");
     }
 }
 
@@ -41,7 +40,7 @@ abstract class Pai{
 class Filha extends Pai{
     int assinatura(String chequeDeUmBilhaoDeReais){
         System.out.println("Esse método exerce o conceito de Polimorfismo, "
-                + "porque pegou um outro método e o alterou.");
+                + "porque pegou um método e o alterou seu corpo.");
     }
     
     void assinatura(){
