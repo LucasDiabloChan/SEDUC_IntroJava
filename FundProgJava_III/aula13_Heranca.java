@@ -1,58 +1,56 @@
-public class Heranca {
-    public static void main(String[] args) {
+// Demonstração de como utilzar herança de classes em Java
+// Prof Lucas, 17/07
+
+public class Heranca{
+	public static void main(String[] args) {
+	    
+		// -------------------------------- //
+	    // Instancia as classes pai e filha //
+		// -------------------------------- //
+		ClassePai cp = new ClassePai();
+        ClasseFilha cf = new ClasseFilha();
         
-        Animal pombo = new Cachorro(9, "DogDoBalacoBaco", 30, "Cinza", 2);
-        
-        pombo.emitirSom();
+		// ---------------------------------- //
+		// Chama os componentes da classe pai //
+		// ---------------------------------- //
+		cp.metodoDaClassePai();
+		System.out.println(cp.idadeDaClassePai = 10);
+		
+		// ------------------------------------ //
+		// Chama os componentes da classe filha //
+		// ------------------------------------ //
+		cf.metodoDaClassePai();
+		cf.metodoDaClasseFilha();
+		// Não mostra '10' porque este é um atributo da 'ClasseFilha', que
+		// não recebeu nenhum valor ainda
+		System.out.println(cf.idadeDaClassePai); 
+		System.out.println(cf.idadeDaClasseFilha = 2);
+	}
+}
 
-        pombo.irAoBanheiro();
+// ----------------------- //
+// CLASSE PARA SER HERDADA //
+// ----------------------- //
+class ClassePai{
+    int idadeDaClassePai;
 
-        System.out.println(" = = = = = = = = = = = = ");
+    public void metodoDaClassePai(){
+        System.out.println("Método da classe pai.");
+    }
+}
 
-        Cachorro caramelo = new Cachorro(5, "DogWow", 20, "Caramelo", 1);
+// ------------------------ //
+// CLASSE QUE HERDARÁ OUTRA //
+// ------------------------ //
+class ClasseFilha extends ClassePai{
 
-        caramelo.correr();
-        caramelo.latir();
-        caramelo.irAoBanheiro();
-        System.out.println(caramelo.comprimentoDaCauda);
+    int idadeDaClasseFilha;
+
+    public void metodoDaClasseFilha(){
+        System.out.println("Método da classe filha.");
     }
 }
 
 
-abstract class Animal{
 
-    protected double peso;
-    protected String nome;
-    public String corDoPelo;
 
-    public void emitirSom(){
-        System.out.println("som de animal");
-    }
-
-    protected void irAoBanheiro(){
-        System.out.println("Preferimos não ver");
-    }
-
-}
-
-class Cachorro extends Animal{
-
-    protected int idade;
-    public int comprimentoDaCauda;
-
-    public Cachorro(int id, String nome, int peso, String corPelo, int tamCauda){
-        this.idade = id;
-        this.nome = nome;
-        this.peso = peso;
-        this.corDoPelo = corPelo;
-        this.comprimentoDaCauda = tamCauda;
-    }
-
-    public void latir(){
-        System.out.println("Au au");
-    }
-
-    public void correr(){
-        System.out.println("correndo");
-    }
-}
